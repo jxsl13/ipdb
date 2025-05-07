@@ -43,7 +43,7 @@ func TestRange(t *testing.T) {
 			},
 		},
 		{
-			name:  "small iv6 range",
+			name:  "small iv4 range",
 			input: "127.0.0.1 - 127.0.0.2",
 			expected: IPv6Range{
 				lb: MustParseIPv6("127.0.0.1"),
@@ -51,7 +51,7 @@ func TestRange(t *testing.T) {
 			},
 		},
 		{
-			name:  "small reverted iv6 range",
+			name:  "small reverted iv4 range",
 			input: "127.0.0.2 - 127.0.0.1",
 			expected: IPv6Range{
 				lb: MustParseIPv6("127.0.0.1"),

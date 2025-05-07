@@ -30,7 +30,8 @@ func (i *IPDB) aboveN(ctx context.Context, tx *sql.Tx, ip IPv6, n uint) ([]bound
 		boundaries = append(boundaries, b)
 	}
 
-	// we must always have at least the first IPv6 available containing only zeroes
+	// we must always have at least the last IPv6 available containing only ones
+	// which is why at least one row is always returned.
 	if err = rows.Err(); err != nil {
 		return nil, err
 	}
